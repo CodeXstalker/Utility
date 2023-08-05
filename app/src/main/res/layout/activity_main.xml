@@ -6,13 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/FlightMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="240dp"
+        android:text="Flight Mode"
+        app:layout_constraintEnd_toStartOf="@+id/Power"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/Power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="72dp"
+        android:text="Power"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/Restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Restart"
+        app:layout_constraintBottom_toTopOf="@+id/SettingApp"
+        app:layout_constraintEnd_toEndOf="@+id/FlightMode"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="@+id/FlightMode"
+        app:layout_constraintTop_toBottomOf="@+id/FlightMode"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <Switch
+        android:id="@+id/DarkTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Dark Theme"
+        app:layout_constraintBottom_toTopOf="@+id/SettingApp"
+        app:layout_constraintEnd_toEndOf="@+id/Power"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="@+id/Power"
+        app:layout_constraintTop_toBottomOf="@+id/Power"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/SettingApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="376dp"
+        android:text="Open Setting App"
+        app:layout_constraintBottom_toTopOf="@+id/CameraApp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
+    <Button
+        android:id="@+id/CameraApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:text="Open Camera App"
+        app:layout_constraintBottom_toTopOf="@+id/GalleryApp"
+        app:layout_constraintEnd_toEndOf="@+id/SettingApp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/SettingApp" />
+
+    <Button
+        android:id="@+id/GalleryApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="164dp"
+        android:text="Open Gallery App"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/SettingApp"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/SettingApp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
