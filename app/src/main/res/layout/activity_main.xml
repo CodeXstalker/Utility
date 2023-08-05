@@ -91,6 +91,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/SettingApp"
         app:layout_constraintHorizontal_bias="0.8"
+        android:clickable="false"
+        android:allowClickWhenDisabled="false"
         app:layout_constraintStart_toStartOf="@+id/SettingApp" />
 
 
