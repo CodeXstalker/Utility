@@ -2,17 +2,25 @@ package com.stalker.utility
 
 import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import android.os.PowerManager
 import android.provider.Settings
 import android.widget.Button
-import android.widget.Switch
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var flightMode : Button
-    lateinit var power : Button
+    lateinit var flightMode: Button
+    lateinit var power: Button
+    lateinit var setting: Button
+    lateinit var camera: Button
+
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +30,25 @@ class MainActivity : AppCompatActivity() {
         flightMode.setOnClickListener { operateFlightMode() }
 
         power.setOnClickListener { operatePower() }
+
+        setting.setOnClickListener { openSettingApp() }
+
+
+        camera.setOnClickListener { openCameraApp() }
+
+
     }
+
+
+
+    private fun viewInitializer() {
+
+        flightMode = findViewById(R.id.FlightMode)
+        power = findViewById(R.id.Power)
+        setting = findViewById(R.id.SettingApp)
+
+    }
+
 
     private fun operatePower() {
         val devicePolicyManager = getSystemService(DEVICE_POLICY_SERVICE) as DevicePolicyManager
@@ -31,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         if (devicePolicyManager.isAdminActive(componentName)) {
             devicePolicyManager.lockNow()
         } else {
-            // The app is not a device administrator. Request for admin privileges.
+
             val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
             intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName)
             intent.putExtra(
@@ -47,11 +73,19 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun viewInitializer() {
 
-        flightMode = findViewById(R.id.FlightMode)
-        power = findViewById(R.id.Power)
-
+    private fun openSettingApp() {
+        val intent = Intent(Settings.ACTION_SETTINGS)
+        startActivity(intent)
     }
 
+
+    private fun openCameraApp() {
+        TODO("Not yet implemented")
+    }
+
+
+
+
 }
+

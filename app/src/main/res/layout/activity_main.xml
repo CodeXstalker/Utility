@@ -30,12 +30,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <Switch
+    <Button
         android:id="@+id/Restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:text="Restart"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/SettingApp"
         app:layout_constraintEnd_toEndOf="@+id/FlightMode"
         app:layout_constraintHorizontal_bias="0.464"
@@ -50,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:text="Dark Theme"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/SettingApp"
         app:layout_constraintEnd_toEndOf="@+id/Power"
         app:layout_constraintHorizontal_bias="0.583"
