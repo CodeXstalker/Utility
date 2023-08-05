@@ -25,21 +25,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun operatePower() {
-//        val devicePolicyManager = getSystemService(DEVICE_POLICY_SERVICE) as DevicePolicyManager
-//        val componentName = ComponentName(this, DeviceAdminReceiver::class.java)
-//
-//        if (devicePolicyManager.isAdminActive(componentName)) {
-//            devicePolicyManager.lockNow()
-//        } else {
-//            // The app is not a device administrator. Request for admin privileges.
-//            val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
-//            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName)
-//            intent.putExtra(
-//                DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-//                "This app requires device administrator privileges to lock the screen."
-//            )
-//            startActivity(intent)
-//        }
+        val devicePolicyManager = getSystemService(DEVICE_POLICY_SERVICE) as DevicePolicyManager
+        val componentName = ComponentName(this, DeviceAdminReceiver::class.java)
+
+        if (devicePolicyManager.isAdminActive(componentName)) {
+            devicePolicyManager.lockNow()
+        } else {
+            // The app is not a device administrator. Request for admin privileges.
+            val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName)
+            intent.putExtra(
+                DevicePolicyManager.EXTRA_ADD_EXPLANATION,
+                "This app requires device administrator privileges to lock the screen."
+            )
+            startActivity(intent)
+        }
     }
 
     private fun operateFlightMode() {
