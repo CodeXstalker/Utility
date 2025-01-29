@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun viewInitializer() {
 
         flightMode = findViewById(R.id.FlightMode)
@@ -129,13 +128,13 @@ class MainActivity : AppCompatActivity() {
             imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
             fos.flush()
             fos.close()
-            Toast.makeText(this, "Image saved to ${imageFile.absolutePath}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Image saved to ${imageFile.absolutePath}", Toast.LENGTH_SHORT)
+                .show()
         } catch (e: Exception) {
             Toast.makeText(this, "Failed to save image", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         }
     }
-
 
 
     companion object {
